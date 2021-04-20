@@ -21,7 +21,7 @@
 
 - name: download prometheus-node
   get_url:
-    url: "https://github.com/prometheus/node_exporter/releases/download/{{ exporter_version | default('v0.18.1') }}/node_exporter-0.18.1.linux-amd64.tar.gz"
+    url: "https://github.com/prometheus/node_exporter/releases/download/v{{ exporter_version | default('0.18.1') }}/node_exporter-{{ exporter_version | default('0.18.1') }}.linux-amd64.tar.gz"
     dest: "/opt/prometheus-node.tar.gz"
   register: prometheus_node_downloaded
 
